@@ -12,20 +12,23 @@
     </tr>
   </thead>
 
+  <%= link_to 'New Student', new_student_path, class: 'links' %>
+
   <tbody>
+
     <% @students.each do |student| %>
       <tr>
         <td><%= student.idNumber %></td>
         <td><%= student.first %></td>
         <td><%= student.last %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', student, class: 'links' %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), class: 'links' %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: 'links' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Student', new_student_path %>
+
+

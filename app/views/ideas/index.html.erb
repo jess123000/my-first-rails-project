@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Ideas</h1>
-
+<p>This page was created using Rails Girls Guide</p>
 <table>
   <thead>
     <tr>
@@ -12,20 +12,18 @@
     </tr>
   </thead>
 
+  <%= link_to 'New Idea', new_idea_path,  class: 'links'%>
+
   <tbody>
     <% @ideas.each do |idea| %>
       <tr>
         <td><%= idea.name %></td>
         <td><%= idea.description %></td>
         <td><%= image_tag idea.picture_url, width: '100%' if idea.picture.present? %></td>
-        <td><%= link_to 'Show', idea %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', idea , class: 'links'%></td>
+        <td><%= link_to 'Edit', edit_idea_path(idea), class: 'links' %></td>
+        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'links' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Idea', new_idea_path %>
