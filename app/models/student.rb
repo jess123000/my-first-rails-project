@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
   # allow mass update of attributes
-  attr_accessible :idNumber, :first, :last
+  attr_accessor :idNumber, :first, :last
 
   # validate that all attributes exist and idNumber is 7 digits long
   validates :first, presence: true
